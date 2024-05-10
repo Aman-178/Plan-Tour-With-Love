@@ -1,0 +1,23 @@
+header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: rgb(243, 145, 17);
+    font-size: x-large;
+    font-weight: bold;
+    position: relative;
+    bottom: 20px;
+    text-underline-position: below;
+    background-color: rgb(82, 14, 14);
+}
+#tour-plan{
+    
+    display: flex;
+    margin-left: 200px;
+    flex-wrap:wrap;
+    min-height: 100vh;
+    width: 80%;
+   
+
+    
+}

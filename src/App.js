@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Tours from './Components/Tours';
+import data from './data';
 
 function App() {
+  const [tours, settours] = useState(data); // Use settours if you need to update the tours list
+  const removetour = (id) => {
+    const newTours = tours.filter(tour => tour.id !== id);
+    settours(newTours);
+  };
+  function refresh(){
+
+  }
+
+  if(tours.length===0){
+    return(
+      <div>
+        <h4 id='No'>No Plan Left</h4>
+      <button id='refresh'onClick={refresh}>Refresh</button>
+      </div>
+    );
+  }
+   function refresh(){
+    settours(data);
+   }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+      
+      <div id='wrapper'>
+        <Tours tours={tours} removetour={removetour}></Tours>
+      </div>
+    
   );
 }
 
